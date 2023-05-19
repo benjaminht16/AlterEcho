@@ -1,0 +1,213 @@
+AlterEcho/
+├── data/
+│   ├── train/
+│   │   ├── eeg/
+│   │   └── meg/
+│   ├── validation/
+│   │   ├── eeg/
+│   │   └── meg/
+│   └── test/
+│       ├── eeg/
+│       └── meg/
+├── models/
+│   ├── diffusion/
+│   ├── transformer/
+│   ├── deep_learning/
+│   ├── deep_feature_extraction/
+│   ├── fusion/
+│   ├── neural_decoding/
+│   ├── neural_interface/
+│   │   └── neural_interface.py
+│   ├── output_parser/
+│   │   └── output_parser.py
+│   └── visualization/
+├── scripts/
+│   ├── preprocessing/
+│   │   ├── prepare_eeg.py
+│   │   ├── prepare_meg.py
+│   │   ├── prepare_behavioral.py
+│   │   ├── prepare_visual_stimuli.py
+│   │   ├── prepare_audio_stimuli.py
+│   │   ├── register_subjects.py
+│   │   └── registration/
+│   │       ├── coregister.py
+│   │       ├── bias_correct.py
+│   │       └── skull_strip.py
+│   ├── feature_extraction/
+│   │   ├── extract_eeg_features.py
+│   │   ├── extract_meg_features.py
+│   │   ├── extract_behavioral_features.py
+│   │   ├── extract_visual_stimuli_features.py
+│   │   ├── extract_audio_stimuli_features.py
+│   │   ├── transfer_learning.py
+│   │   ├── neural_decoding.py
+│   │   ├── deep_feature_extraction.py
+│   │   ├── fusion.py
+│   │   ├── diffusion.py
+│   │   ├── transformer.py
+│   │   └── visualization.py
+│   ├── feature_selection/
+│   │   ├── select_eeg_features.py
+│   │   ├── select_meg_features.py
+│   │   ├── select_behavioral_features.py
+│   │   ├── select_visual_stimuli_features.py
+│   │   ├── select_audio_stimuli_features.py
+│   │   ├── select_neural_decoding_features.py
+│   │   ├── select_deep_feature_extraction_features.py
+│   │   ├── select_fusion_features.py
+│   │   ├── select_diffusion_features.py
+│   │   ├── select_transformer_features.py
+│   │   └── select_visualization_features.py
+│   ├── feature_transformer/
+│   │   ├── transformer_eeg_features.py
+│   │   ├── transformer_meg_features.py
+│   │   ├── transformer_behavioral_features.py
+│   │   ├── transformer_visual_stimuli_features.py
+│   │   ├── transformer_audio_stimuli_features.py
+│   │   ├── transformer_neural_decoding_features.py
+│   │   ├── transformer_deep_feature_extraction_features.py
+│   │   ├── transformer_fusion_features.py
+│   │   ├── transformer_diffusion_features.py
+│   │   ├── transformer_transformer_features.py
+│   │   └── transformer_visualization_features.py
+│   ├── deep_learning/
+│   │   ├── train_eeg_model.py
+│   │   ├── predict_eeg.py
+│   │   ├── train_meg_model.py
+│   │   ├── predict_meg.py
+│   │   ├── train_behavioral_model.py
+│   │   ├── predict_behavioral.py
+│   │   ├── train_visual_stimuli_model.py
+│   │   ├── predict_visual_stimuli.py
+│   │   ├── train_audio_stimuli_model.py
+│   │   ├── predict_audio_stimuli.py
+│   │   ├── train_neural_decoding_model.py
+│   │   ├── predict_neural_decoding.py
+│   │   ├── train_deep_feature_extraction_model.py
+│   │   ├── predict_deep_feature_extraction.py
+│   │   ├── train_fusion_model.py
+│   │   ├── predict_fusion.py
+│   │   ├── train_diffusion_model.py
+│   │   ├── predict_diffusion.py
+│   │   ├── train_transformer_model.py
+│   │   └── predict_transformer.py
+│   ├── inference/
+│   │   ├── eeg_inference.py
+│   │   ├── meg_inference.py
+│   │   ├── behavioral_inference.py
+│   │   ├── visual_stimuli_inference.py
+│   │   ├── audio_stimuli_inference.py
+│   │   ├── neural_decoding_inference.py
+│   │   ├── deep_feature_extraction_inference.py
+│   │   ├── fusion_inference.py
+│   │   ├── diffusion_inference.py
+│   │   ├── transformer_inference.py
+│   │   ├── live_transformer_inference.py
+│   │   └── visualization.py
+│   ├── diffusion/
+│   │   ├── prepare_diffusion.py
+│   │   ├── diffusion_tensor_imaging/
+│   │   │   ├── dti_fit.py
+│   │   │   ├── dti_analysis.py
+│   │   │   └── tensor_visualization.py
+│   │   ├── diffusion_spectrum_imaging/
+│   │   │   ├── dsi_fit.py
+│   │   │   ├── dsi_analysis.py
+│   │   │   └── orientation_distribution_function.py
+│   │   └── advanced_diffusion_modeling/
+│   │       ├── diffusion-weighted-imaging/
+│   │       │   ├── dwi_fit.py
+│   │       │   ├── dwi_analysis.py
+│   │       │   └── tensor_visualization.py
+│   │       ├── q-space-diffusion-imaging/
+│   │       │   ├── qball_fit.py
+│   │       │   ├── qball_analysis.py
+│   │       │   └── qball_visualization.py
+│   │       ├── high-angular-resolution-diffusion-imaging/
+│   │       │   ├── hardi_fit.py
+│   │       │   ├── hardi_analysis.py
+│   │       │   └── fiber_tracking.py
+│   │       ├── diffusion_kurtosis_imaging/
+│   │       │   ├── dki_fit.py
+│   │       │   ├── dki_analysis.py
+│   │       │   └── kurtosis_visualization.py
+│   │       ├── diffusion_connectivity/
+│   │       │   ├── tractography.py
+│   │       │   ├── connectivity_matrix.py
+│   │       │   └── network_analysis.py
+│   │       ├── multi-shell_diffusion-weighted-imaging/
+│   │       │   ├── msdwi_fit.py
+│   │       │   ├── msdwi_analysis.py
+│   │       │   └── tensor_visualization.py
+│   │       ├── diffusion_microscopy/
+│   │       │   ├── neurite_orientation_dispersion_and_density_imaging.py
+│   │       │   └── diffusion_orientation_distribution_function.py
+│   │       ├── diffusion_relaxometry/
+│   │       │   ├── diffusion_relaxation_fit.py
+│   │       │   ├── diffusion_relaxation_analysis.py
+│   │       │   └── relaxation_visualization.py
+│   │       └── diffusion_perfusion/
+│   │           ├── diffusion_weighted_imaging.py
+│   │           ├── diffusional_kurtosis_perfusion.py
+│   │           └── diffusion_basis_spectrum_imaging.py
+│   ├── evaluation/
+│   │   ├── evaluate_eeg.py
+│   │   ├── evaluate_meg.py
+│   │   ├── evaluate_behavioral.py
+│   │   ├── evaluate_visual_stimuli.py
+│   │   ├── evaluate_audio_stimuli.py
+│   │   ├── evaluate_neural_decoding.py
+│   │   ├── evaluate_deep_feature_extraction.py
+│   │   ├── evaluate_fusion.py
+│   │   ├── evaluate_diffusion.py
+│   │   ├── evaluate_transformer.py
+│   │   ├── evaluation_metrics.py
+│   │   └── generate_report.py
+│   ├── tools/
+│   │   ├── download_data.py
+│   │   ├── download_pretrained_models.py
+│   │   ├── download_visual_stimuli.py
+│   │   ├── download_audio_stimuli.py
+│   │   ├── download_eeg.py
+│   │   ├── download_meg.py
+│   │   ├── download_behavioral.py
+│   │   ├── download_diffusion.py
+│   │   ├── download_transformer.py
+│   │   ├── download_diffusion_tensor_imaging.py
+│   │   ├── download_diffusion_spectrum_imaging.py
+│   │   ├── download_advanced_diffusion_modeling.py
+│   │   ├── download_diffusion_connectivity.py
+│   │   ├── download_multi-shell_diffusion-weighted-imaging.py
+│   │   ├── download_diffusion_microscopy.py
+│   │   ├── download_diffusion_relaxometry.py
+│   │   ├── download_diffusion_perfusion.py
+│   │   ├── download_deep_feature_extraction.py
+│   │   ├── download_fusion.py
+│   │   └── download_neural_decoding.py
+│   └── visualization/
+│       ├── visualize_diffusion.py
+│       ├── visualize_transformer.py
+│       ├── visualize_behavioral.py
+│       ├── visualize_visual_stimuli.py
+│       ├── visualize_audio_stimuli.py
+│       ├── visualize_eeg.py
+│       ├── visualize_meg.py
+│       ├── visualize_decoding.py
+│       ├── visualize_deep_feature_extraction.py
+│       ├── visualize_fusion.py
+│       ├── visualize_diffusion_tensor_imaging.py
+│       ├── visualize_diffusion_spectrum_imaging.py
+│       ├── visualize_advanced_diffusion_modeling.py
+│       ├── visualize_diffusion_connectivity.py
+│       ├── visualize_multi-shell_diffusion-weighted-imaging.py
+│       ├── visualize_diffusion_microscopy.py
+│       ├── visualize_diffusion_relaxometry.py
+│       ├── visualize_diffusion_perfusion.py
+│       ├── visualize_evaluation.py
+│       ├── visualize_report.py
+│       ├── visualize_results.py {Done}
+│       └── plot_results.py {Done}
+├── requirements.txt
+└── docs/
+    ├── user_manual.pdf
+    └── developer_guide.pdf
