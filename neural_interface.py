@@ -11,14 +11,10 @@ class AlterEchoInterface:
         self.is_connected = True
         
     def send_data(self, data):
-        # Send data to AlterEcho for processing
-        processed_data = alterecho.process(data, self.device)
-        return processed_data
+        return alterecho.process(data, self.device)
         
     def receive_data(self):
-        # Receive processed data from AlterEcho
-        processed_data = alterecho.get_data(self.device)
-        return processed_data
+        return alterecho.get_data(self.device)
         
     def disconnect(self):
         # Disconnect from AlterEcho device

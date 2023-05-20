@@ -18,8 +18,7 @@ def load_data(data_path: str) -> pd.DataFrame:
      :param data_path: The path to the CSV file.
     :return: A pandas DataFrame containing the data from the CSV file.
     """
-    df = pd.read_csv(data_path)
-    return df
+    return pd.read_csv(data_path)
 def interactive_histogram(dataframe: pd.DataFrame, column_name: str) -> None:
     """
     Displays an interactive histogram of a column in the DataFrame using Plotly.
@@ -84,7 +83,6 @@ def visualize_report(dataframe: pd.DataFrame, lang: str = 'en') -> None:
         stop_words = set(stopwords.words(lang))
     else:
         stop_words = set(stopwords.words('english'))
-     # Iterate through columns and visualize data
     for column in dataframe.columns:
         if dataframe[column].dtype == "O":
             interactive_categorical_count(dataframe, column)
@@ -92,18 +90,15 @@ def visualize_report(dataframe: pd.DataFrame, lang: str = 'en') -> None:
                 text = ' '.join(dataframe[column]).lower()
                 text = ' '.join([word for word in text.split() if word not in stop_words])
                 freq_dist = nltk.FreqDist(text.split())
-                freq_dist.plot(20, cumulative=False)
             else:
                 freq_dist = nltk.FreqDist(dataframe[column])
-                freq_dist.plot(20, cumulative=False)
+            freq_dist.plot(20, cumulative=False)
         else:
             interactive_histogram(dataframe, column)
             seaborn_histogram(dataframe, column)
             if len(dataframe[column].unique()) <= 10:
                 seaborn_boxplot(dataframe, column, dataframe.columns[-1])
-     # Visualize correlation matrix
     interactive_correlation_matrix(dataframe)
-     # Perform clustering and visualize data points
     if len(dataframe.columns) > 1:
         standardized_data = StandardScaler().fit_transform(dataframe.select_dtypes(include=["number"]))
         pca = PCA(n_components=2)
@@ -121,7 +116,6 @@ def visualize_report(dataframe: pd.DataFrame, lang: str = 'en') -> None:
         fig.show()
         tukey_result = pairwise_tukeyhsd(dataframe.iloc[:, -1], kmeans.labels_)
         print(tukey_result)
-     # Perform linear regression and visualize scatter plot
     if len(dataframe.columns) == 2:
         linreg = LinearRegression()
         linreg.fit(dataframe.iloc[:, :-1], dataframe.iloc[:, -1])
